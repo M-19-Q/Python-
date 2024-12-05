@@ -12,7 +12,7 @@ def download_songs(url=None): #定义叫做download_songs的函数，函数的�
     #https://www.example.com/search?q=python：这个 URL 用于在 example.com 网站上执行搜索操作，查询关键词是 python。
     #https://music.163.com/#/playlist?id=2384642500：这是网易云音乐的一个歌单页面，其中 id=2384642500 是查询参数，指向特定的歌单。
     if url is None:
-        url = 'https://music.163.com/#/playlist?id=xxx'
+        url = 'https://music.163.com/#/playlist?id=你的目标歌单id'
 
     url = url.replace('/#', '').replace('https', 'http')  # 对字符串进行去空格和转协议处理
     # 网易云音乐外链url接口：http://music.163.com/song/media/outer/url?id=xxxx，其中 xxxx 代表歌曲的 ID。当你替换这xxxx为实际的歌曲ID时，你就能生成一个可以直接播放该歌曲的URL。
@@ -134,6 +134,6 @@ def download_playlist_lyrics(playlist_id):
 
 
 if __name__ == '__main__':
-    playlist_id = xxx  # 这里是歌单ID，替换为你需要下载歌词的歌单ID
+    playlist_id = 你的目标歌单id  # 这里是歌单ID，替换为你需要下载歌词的歌单ID
     download_playlist_lyrics(playlist_id)
     download_songs(f'https://music.163.com/playlist?id={playlist_id}')
